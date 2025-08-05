@@ -1,3 +1,18 @@
+/**
+ * @file    fire_works.c
+ * @brief   Displays a firework-style animation on the LED matrix.
+ * @author  Adithya Balak
+ * @date    2025-08-05
+ * 
+ * @details
+ * This file simulates a simple firework pattern, where points on the matrix 
+ * light up and spread outward to mimic an explosion effect.
+ * 
+ * @note
+ * - Display: 8×8 LED Matrix
+ * - Controller: Halo Ver 1.0
+ */
+
 void fw_main(void)
 {
     WRITE_REGISTER(0x40000000, 0xFF);
