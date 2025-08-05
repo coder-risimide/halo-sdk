@@ -1,3 +1,17 @@
+/**
+ * @file    checker_fill.c
+ * @brief   Generates a checkerboard pattern fill animation on the LED matrix.
+ * @author  Adithya Balak
+ * @date    2025-08-05
+ * 
+ * @details
+ * This file creates an alternating pattern (checkerboard style) across the 8×8 LED matrix.
+ * 
+ * @note
+ * - Display: 8×8 LED Matrix
+ * - Controller: Halo Ver 1.0
+ */
+
 void fw_main(void)
 {
     WRITE_REGISTER(0x40000000, 0xFF);
