@@ -1,3 +1,18 @@
+/**
+ * @file    sine_wave.c
+ * @brief   Simulates a sine wave animation on the 8×8 LED matrix.
+ * @author  Adithya Balak
+ * @date    2025-08-05
+ * 
+ * @details
+ * This file animates a wave-like pattern resembling a sine wave moving 
+ * across the matrix, typically from left to right.
+ * 
+ * @note
+ * - Display: 8×8 LED Matrix
+ * - Controller: Halo Ver 1.0
+ */
+
 void fw_main(void)
 {
     WRITE_REGISTER(0x40000000, 0xFF); 
