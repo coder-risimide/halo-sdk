@@ -13,6 +13,8 @@
  * - Controller: Halo Ver 1.0
  */
 
+ #include "fire_works.h"
+
 void fw_main(void)
 {
     WRITE_REGISTER(0x40000000, 0xFF);

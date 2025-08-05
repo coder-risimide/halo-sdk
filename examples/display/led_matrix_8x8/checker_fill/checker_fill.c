@@ -1,3 +1,4 @@
+
 /**
  * @file    checker_fill.c
  * @brief   Generates a checkerboard pattern fill animation on the LED matrix.
@@ -11,6 +12,8 @@
  * - Display: 8×8 LED Matrix
  * - Controller: Halo Ver 1.0
  */
+
+ #include "checker_fill.h"
 
 void fw_main(void)
 {
