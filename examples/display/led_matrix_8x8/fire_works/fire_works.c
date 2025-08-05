@@ -15,7 +15,7 @@
 
  #include "fire_works.h"
 
-void fw_main(void)
+void fire_works_animation(void)
 {
     WRITE_REGISTER(0x40000000, 0xFF);
     WRITE_REGISTER(0x40000400, 0xFF);

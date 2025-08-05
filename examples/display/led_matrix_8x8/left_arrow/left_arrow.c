@@ -15,7 +15,7 @@
 
  #include "left_arrow.h"
 
-void fw_main(void)
+void left_arrow_animation(void)
 {
     WRITE_REGISTER(0x40000000, 0xFF); 
     WRITE_REGISTER(0x40000400, 0xFF); 

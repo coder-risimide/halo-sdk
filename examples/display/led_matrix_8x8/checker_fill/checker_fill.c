@@ -15,7 +15,7 @@
 
  #include "checker_fill.h"
 
-void fw_main(void)
+void checker_fill_pattern_gen(void)
 {
     WRITE_REGISTER(0x40000000, 0xFF);
     WRITE_REGISTER(0x40000400, 0xFF);

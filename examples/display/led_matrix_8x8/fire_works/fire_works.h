@@ -2,6 +2,6 @@
 #define FIRE_WORKS_H
 
 // Function prototype
-void fw_main(void);
+void fire_works_animation(void);
 
 #endif // FIRE_WORKS_H

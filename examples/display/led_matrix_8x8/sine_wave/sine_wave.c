@@ -15,7 +15,7 @@
 
  #include "sine_wave.h"
 
-void fw_main(void)
+void sine_wave_animation(void)
 {
     WRITE_REGISTER(0x40000000, 0xFF); 
     WRITE_REGISTER(0x40000400, 0xFF); 
