@@ -1,3 +1,17 @@
+/**
+ * @file    rotating_square.c
+ * @brief   Shows a square rotating through four positions.
+ * @author  Fathima Risha Ryaaz
+ * @date    2025-08-05
+ *
+ * @details
+ * This file contains a function that generates a square that rotates in four positions using 2D arrays that represet each rotating position.
+ *
+ * @note
+ * - Controller: Halo Ver 1.0 
+ * - GPIOs used: GPIO0, GPIO1
+ */
+
 #include "halo.h"
 void fw_main(void)
 {
