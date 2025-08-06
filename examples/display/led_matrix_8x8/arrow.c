@@ -1,3 +1,17 @@
+/**
+ * @file    arrow.c
+ * @brief   Scrolls a 3-column arrow symbol from left to right.
+ * @author  Fathima Risha Ryaaz
+ * @date    2025-08-05
+ *
+ * @details
+ * This file contains a function that scrolls a right pointing arrow symbol from left to right.
+ *
+ * @note
+ * - Controller: Halo Ver 1.0 
+ * - GPIOs used: GPIO0, GPIO1
+ */
+
 #include "halo.h"
 void fw_main(void)
 {
@@ -34,3 +48,5 @@ void fw_main(void)
         }
     }
 }
+
+
