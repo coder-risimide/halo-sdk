@@ -1,3 +1,18 @@
+/**
+ * @file    blinking_cross.c
+ * @brief   A cross made from row & column center blinks on/off.
+ * @author  Fathima Risha Ryaaz
+ * @date    2025-08-05
+ *
+ * @details
+ * This file contains a function that generates a cross that blinks on and off using two 8-bit unsigned integer arrays.
+ *
+ * @note
+ * - Controller: Halo Ver 1.0 
+ * - GPIOs used: GPIO0, GPIO1
+ */
+
+#include "halo.h"
 void fw_main(void)
 {
     WRITE_REGISTER(0x40000000, 0xFF); 
@@ -44,3 +59,5 @@ void fw_main(void)
         }
     }
 }
+
+
