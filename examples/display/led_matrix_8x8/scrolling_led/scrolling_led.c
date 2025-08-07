@@ -11,7 +11,7 @@
  * - GPIOs used: GPIO0, GPIO1
  */
 
-#include "scrolling_led.h"
+#include "halo.h"
 void fw_main(void)
 {
     WRITE_REGISTER(0x40000000, 0xFF);  
