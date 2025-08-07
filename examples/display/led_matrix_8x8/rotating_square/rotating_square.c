@@ -12,7 +12,7 @@
  * - GPIOs used: GPIO0, GPIO1
  */
 
-#include "rotating_square.h"
+#include "halo.h"
 void fw_main(void)
 {
     WRITE_REGISTER(0x40000000, 0xFF); 
