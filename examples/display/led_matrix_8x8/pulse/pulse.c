@@ -1,6 +1,22 @@
+
+/**
+ * @file    left_arrow.c
+ * @brief   Displays a led staring from the centre and moving outwards until it reaches the diagonal ends of the 8×8 LED matrix and returns to the centre.
+ * @author  Ashlin Saju
+ * @date    2025-08-05
+ * 
+ * @details
+ * This file contains the LED pattern data and logic to display a 
+ * left-pointing arrow that animate by shifting.
+ * 
+ * @note
+ * - Display: 8×8 LED Matrix
+ * - Controller: Halo Ver 1.0
+ */
+
 #include "halo.h"
 
-void fw_main(void)
+void pulse(void)
 {
     // USER CODE BEGINS
     WRITE_REGISTER(0x40000000, 0xFF);
