@@ -16,7 +16,7 @@
 
 #include "halo.h"
 
-void pulse(void)
+void fw_main(void)
 {
     // USER CODE BEGINS
     WRITE_REGISTER(0x40000000, 0xFF);

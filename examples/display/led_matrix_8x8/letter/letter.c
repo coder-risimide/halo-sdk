@@ -16,7 +16,7 @@
 
 #include <halo.h>  
 
-void letter_animation(void)
+void fw_main(void)
 {
     WRITE_REGISTER(0x40000000, 0xFF);
     WRITE_REGISTER(0x40000400, 0xFF);  
