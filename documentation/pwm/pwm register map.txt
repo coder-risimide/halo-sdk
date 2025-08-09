@@ -1,0 +1,107 @@
+=======================================
+      PWM Peripheral Register Map
+=======================================
+
+Base Address:
+  PWM_BASE_ADDR = 0x40004000
+
+Each PWM channel occupies 0x40 (64) bytes  
+(Large reserved space for future extension)
+
+Register Layout Per Channel:
+---------------------------------------
+Offset   Register    Description
+-------- ----------- ----------------------------
++0x00    PERIOD      PWM period in microseconds
++0x04    DUTY        PWM duty cycle in microseconds
++0x08    CTRL        Control register (bit 0 = enable)
++0x0C    RESERVED0   Reserved for future use
++0x10    RESERVED1   Reserved for future use
++0x14    RESERVED2   Reserved for future use
++0x18    RESERVED3   Reserved for future use
++0x1C    RESERVED4   Reserved for future use
++0x20    RESERVED5   Reserved for future use
++0x24    RESERVED6   Reserved for future use
++0x28    RESERVED7   Reserved for future use
++0x2C    RESERVED8   Reserved for future use
++0x30    RESERVED9   Reserved for future use
++0x34    RESERVED10  Reserved for future use
++0x38    RESERVED11  Reserved for future use
++0x3C    RESERVED12  Reserved for future use
+
+---------------------------------------
+PERIOD Register (Offset +0x00)
+---------------------------------------
+- Access       : Read/Write
+- Width        : 32-bit
+- Description  : PWM signal total period (e.g., 20000 for 20ms)
+- Default      : 0x00000000
+
+---------------------------------------
+DUTY Register (Offset +0x04)
+---------------------------------------
+- Access       : Read/Write
+- Width        : 32-bit
+- Description  : High pulse width (e.g., 1500 for 1.5ms)
+- Valid Range  : 0 to PERIOD
+- Default      : 0x00000000
+
+---------------------------------------
+CTRL Register (Offset +0x08)
+---------------------------------------
+- Access       : Read/Write
+- Width        : 32-bit
+- Description  : PWM control
+  Bit 0   : ENABLE (1 = enable, 0 = disable)
+  Bits 1-31 : Reserved
+- Default      : 0x00000000
+
+---------------------------------------
+Channel Address Map:
+---------------------------------------
+
+PWM0:
+  PERIOD = 0x40004000
+  DUTY   = 0x40004004
+  CTRL   = 0x40004008
+
+PWM1:
+  PERIOD = 0x40004040
+  DUTY   = 0x40004044
+  CTRL   = 0x40004048
+
+PWM2:
+  PERIOD = 0x40004080
+  DUTY   = 0x40004084
+  CTRL   = 0x40004088
+
+PWM3:
+  PERIOD = 0x400040C0
+  DUTY   = 0x400040C4
+  CTRL   = 0x400040C8
+
+PWM4:
+  PERIOD = 0x40004100
+  DUTY   = 0x40004104
+  CTRL   = 0x40004108
+
+PWM5:
+  PERIOD = 0x40004140
+  DUTY   = 0x40004144
+  CTRL   = 0x40004148
+
+PWM6:
+  PERIOD = 0x40004180
+  DUTY   = 0x40004184
+  CTRL   = 0x40004188
+
+PWM7:
+  PERIOD = 0x400041C0
+  DUTY   = 0x400041C4
+  CTRL   = 0x400041C8
+
+---------------------------------------
+Notes:
+---------------------------------------
+- DUTY must be less than PERIOD.
+- Reserved registers should be read as **0x00000000** and ignored until defined.
