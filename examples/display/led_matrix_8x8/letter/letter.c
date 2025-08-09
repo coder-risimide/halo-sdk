@@ -1,13 +1,13 @@
 
 /**
  * @file    letter.c
- * @brief   Displays a letter 'H' moving in 8×8 LED matrix.
+ * @brief   Scroll a single letter from left to right using font buffer.
  * @author  Ashiln Saju
  * @date    2025-08-05
  * 
  * @details
- * This file contains the LED pattern data and logic to display a 
- * left-pointing arrow that animate by shifting.
+ * This file displays the letter 'H' moving from left to right  
+ * in the 8x8 LED matrix.
  * 
  * @note
  * - Display: 8×8 LED Matrix
@@ -40,7 +40,7 @@ void fw_main(void)
         while (shift < 8)
         {
             for (frame = 0; frame < 50; frame++) 
-            {
+            {   
                 for (row = 0;row < 8; row++)
                 {
                     unsigned char row_mask = (1 << row);

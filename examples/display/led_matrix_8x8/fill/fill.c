@@ -5,8 +5,8 @@
  * @date    2025-08-05
  * 
  * @details
- * This file contains the LED pattern data and logic to display a 
- * left-pointing arrow that animate by shifting.
+ * This file fills the LED matrix from top to bottom and bottom to up in 
+ * the LED matrix by lighting a single LED at a time.
  * 
  * @note
  * - Display: 8×8 LED Matrix

@@ -1,13 +1,13 @@
 
 /**
- * @file    left_arrow.c
- * @brief   Displays a led staring from the centre and moving outwards until it reaches the diagonal ends of the 8×8 LED matrix and returns to the centre.
+ * @file    pulse.c
+ * @brief   Fill LEDs from center to edge, then back inward.
  * @author  Ashlin Saju
  * @date    2025-08-05
  * 
  * @details
- * This file contains the LED pattern data and logic to display a 
- * left-pointing arrow that animate by shifting.
+ * This file Displays a led staring from the centre and moving outwards until it reaches the  
+ * diagonal ends of the 8×8 LED matrix and returns to the centre.
  * 
  * @note
  * - Display: 8×8 LED Matrix
@@ -18,7 +18,6 @@
 
 void fw_main(void)
 {
-    // USER CODE BEGINS
     WRITE_REGISTER(0x40000000, 0xFF);
     WRITE_REGISTER(0x40000400, 0xFF);  
 
@@ -31,50 +30,42 @@ void fw_main(void)
     
     int i = 0;
     int j = 0;
-    int direction = 0;
     int count = 0;
-    // USER CODE ENDS
+
     while (1)
     {
-        if(direction == 0)
+        for (count = 0; count < 100; count++)
         {
-            while(count <= 1000)
+            for (i = 0; i <= j; i++)
             {
-                for(i = 0;i<=j;i++)
-                {
-                    WRITE_REGISTER(0x40000008, vals[i]);     
-                    WRITE_REGISTER(0x40000408, ~vals[i]);  
-                    delay_us(10);
-                    WRITE_REGISTER(0x40000400, 0XFF);
-                }
-                delay_us(1000);
-                WRITE_REGISTER(0x40000400, 0XFF);
-                count ++;
+                // Set row
+                WRITE_REGISTER(0x40000008, vals[i]);     
+
+                WRITE_REGISTER(0x40000408, ~vals[i]);  
+
+                delay_us(10);
+
+                WRITE_REGISTER(0x40000408, 0xFF);
             }
-            j++;
         }
-        else
-        {
-            while(count <= 1000)
+        j++;
+        if (j >= 3) 
+            while( j >=0 )
             {
-                for(i = 0;i<=j;i++)
+                for (count = 0; count < 100; count++)
                 {
-                    WRITE_REGISTER(0x40000008, vals[i]);     
-                    WRITE_REGISTER(0x40000408, ~vals[i]);  
-                    delay_us(10);
-                    WRITE_REGISTER(0x40000400, 0XFF);
-                }
-                delay_us(1000);
-                WRITE_REGISTER(0x40000400, 0XFF);
-                count ++;
-            } 
-            j--;
-        }
-        count = 0;
-        if(j == 3 || j == 0)
-        {
-            direction = ~direction;
-        }
-        delay_us(10);
+                    for (i = 0; i <= j; i++)
+                    {
+                        WRITE_REGISTER(0x40000008, vals[i]);     
+                
+                        WRITE_REGISTER(0x40000408, ~vals[i]);  
+                
+                        delay_us(10);
+
+                        WRITE_REGISTER(0x40000408, 0xFF);
+                    }
+                } 
+                j--;
+            }
     }
 }

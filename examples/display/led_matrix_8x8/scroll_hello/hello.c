@@ -1,12 +1,12 @@
 /**
  * @file    hello.c
- * @brief   Displays the word 'HELLO' in the LED matrix.
+ * @brief   Scroll thw word ("HELLO") across the matrix using windowed font buffer.
  * @author  Ashiln Saju
  * @date    2025-08-05
  * 
  * @details
- * This file contains the LED pattern data and logic to display a 
- * left-pointing arrow that animate by shifting.
+ * This file displays the word 'HELLO' moving from left to right 
+ * 
  * 
  * @note
  * - Display: 8×8 LED Matrix
