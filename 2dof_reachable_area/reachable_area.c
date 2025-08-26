@@ -53,4 +53,3 @@ void reachable_area(void)
         }
     }
 }
-
