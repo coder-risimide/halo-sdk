@@ -55,3 +55,4 @@ void complete_area_pattern_gen(void)
         }
     }
 }
+

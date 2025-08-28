@@ -45,7 +45,7 @@ static int computeIK(float x, float y, float *theta1_deg, float *theta2_deg, int
     float r2 = x*x + y*y;
     float r  = sqrtf(r2);
 
-    // Check reachability
+        // Check reachability
     if (r > (L1 + L2) || r < fabsf(L1 - L2))
         return 0;
     
@@ -55,14 +55,12 @@ static int computeIK(float x, float y, float *theta1_deg, float *theta2_deg, int
     float ang2 = acosf(c2);
     if (elbowUp) ang2 = -ang2;
 
-    // theta1 
+    // theta1
     float s2 = sinf(ang2);
     float k1 = L1 + L2 * c2;
     float k2 = L2 * s2;
 
-    float beta  = atan2f(y, x);
-    float alpha = atan2f(k2, k1);
-    float ang1  = beta - alpha;
+    float ang1 = atan2f(y, x) - atan2f(k2, k1);
 
     // Convert to degrees
     *theta1_deg = ang1 * 180.0f / M_PI;
@@ -77,17 +75,18 @@ static void move_to(float x, float y, int elbowUp)
     float t1_deg, t2_deg;
     if (computeIK(x, y, &t1_deg, &t2_deg, elbowUp))
     {
-        unsigned int duty1 = angle_to_duty_us(t1_deg);
-        unsigned int duty2 = angle_to_duty_us(t2_deg);
+        // Clamp to servo safe range (0–180°)
+        if (t1_deg < 0.0f)   t1_deg = 0.0f;
+        if (t1_deg > 180.0f) t1_deg = 180.0f;
+        if (t2_deg < 0.0f)   t2_deg = 0.0f;
+        if (t2_deg > 180.0f) t2_deg = 180.0f;
 
-        WRITE_REGISTER(0x40004004, duty1); 
-        WRITE_REGISTER(0x40004044, duty2); 
-    }
-    else
-    {
-        // Not reachable → ignore or handle
+        // Write PWM duties
+        WRITE_REGISTER(0x40004004, angle_to_duty_us(t1_deg)); // shoulder
+        WRITE_REGISTER(0x40004044, angle_to_duty_us(t2_deg)); // elbow
     }
 }
+
 
 // ---------- move along straight line ----------
 static void move_line(float x1, float y1, float x2, float y2, int steps, int elbowUp)
@@ -117,3 +116,4 @@ void straight_line_pattern_gen(void)
         delay_us(20); // idle to keep PWM alive
     }
 }
+
