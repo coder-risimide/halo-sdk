@@ -19,9 +19,10 @@ void fw_main(void)
 
     while (1)
     {
-        for (int col = 0; col < 8; col++)          {
-            for (int repeat = 0; repeat < 30; repeat++)  
+        for (int col = 0; col < 8; col++)         
             {
+            for (int repeat = 0; repeat < 30; repeat++)  
+                {
                 WRITE_REGISTER(0x40000008, 0b00000001);  
 
                 unsigned char col_pattern = ~(1 << col); 
@@ -29,7 +30,7 @@ void fw_main(void)
                 delay_us(5);  
 
                 WRITE_REGISTER(0x40000408, 0xFF);  
+                }
             }
-        }
     }
 }
