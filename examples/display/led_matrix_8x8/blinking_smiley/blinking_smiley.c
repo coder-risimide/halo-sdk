@@ -31,16 +31,7 @@ void fw_main(void)
     };
 
     // All LEDs OFF
-    unsigned char smiley_off[8] = {
-        0b00000000,
-        0b00000000,
-        0b00000000,
-        0b00000000,
-        0b00000000,
-        0b00000000,
-        0b00000000,
-        0b00000000
-    };
+    unsigned char smiley_off[8] = {0};
 
     while (1)
     {
@@ -61,4 +52,3 @@ void fw_main(void)
         }
     }
 }
-
