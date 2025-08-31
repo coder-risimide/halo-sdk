@@ -28,7 +28,6 @@ void fw_main(void)
         0x81   
     };
     
-    int i = 0;
     int j = 0;
     int count = 0;
 
@@ -36,7 +35,7 @@ void fw_main(void)
     {
         for (count = 0; count < 100; count++)
         {
-            for (i = 0; i <= j; i++)
+            for (int i = 0; i <= j; i++)
             {
                 // Set row
                 WRITE_REGISTER(0x40000008, vals[i]);     
