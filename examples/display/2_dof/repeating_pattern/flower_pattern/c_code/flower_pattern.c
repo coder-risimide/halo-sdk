@@ -81,10 +81,7 @@ int computeIK(float x, float y, float *theta1_deg, float *theta2_deg) {
     float s2   = sinf(ang2);
     float k1   = L1 + L2 * c2;
     float k2   = L2 * s2;
-
-    float beta  = atan2f(y, x);
-    float alpha = atan2f(k2, k1);
-    float ang1  = beta - alpha;
+    float ang1 = atan2f(y, x) - atan2f(k2, k1);
 
     *theta1_deg = ang1 * 180.0f / M_PI;
     *theta2_deg = ang2 * 180.0f / M_PI;
@@ -122,8 +119,8 @@ void fw_main(void) {
     while (1) {
         for (int i = 0; i < NUM_POINTS; i++) {
             // Apply any extra offset if needed
-            float x = flower_coords[i][0]*0.5+3;
-            float y = flower_coords[i][1]*0.5+10;
+            float x = flower_coords[i][0]*0.5f+3.0f;
+            float y = flower_coords[i][1]*0.5f+10.0f;
 
             move_to(x, y);
             delay_us(5); // adjust drawing speed (5 ms per point here)
