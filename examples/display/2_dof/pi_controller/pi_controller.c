@@ -107,6 +107,7 @@ unsigned int pi_control(float desired_angle_deg, unsigned int reg_addr, float* i
     float error = desired_angle_deg - current_angle_deg;
 
     *integral += error * 0.02f; // 20 ms loop
+    *integral = clampf(*integral, -50.0f, 50.0f);
 
     float control = KP * error + KI * (*integral);
     float new_angle_deg = current_angle_deg + control;
