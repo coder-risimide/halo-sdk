@@ -53,7 +53,7 @@ void fw_main(void)
             {
                 for (count = 0; count < 1000; count++)
                 {
-                    for (i = 0; i <= j; i++)
+                    for (int i = 0; i <= j; i++)
                     {
                         WRITE_REGISTER(0x40000008, vals[i]);     
                 
