@@ -51,7 +51,7 @@ void fw_main(void)
         if (j >= 3) 
             while( j >=0 )
             {
-                for (count = 0; count < 100; count++)
+                for (count = 0; count < 1000; count++)
                 {
                     for (i = 0; i <= j; i++)
                     {

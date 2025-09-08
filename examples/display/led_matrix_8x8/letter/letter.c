@@ -46,11 +46,10 @@ void fw_main(void)
         
                     WRITE_REGISTER(0x40000008, row_mask); 
                     WRITE_REGISTER(0x40000408, col_data); 
-                    delay_us(10);                         
+                    delay_us(10);  
+                    WRITE_REGISTER(0x40000408, 0XFF);                       
                 }
             }
-        shift ++;
         }
-        shift = 0;
     }
 }
