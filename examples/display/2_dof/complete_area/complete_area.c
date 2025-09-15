@@ -56,3 +56,10 @@ void complete_area_pattern_gen(void)
     }
 }
 
+void fw_main(void)
+{
+    complete_area_pattern_gen(); 
+}
+
+
+
