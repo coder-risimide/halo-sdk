@@ -1,4 +1,5 @@
 #include "halo.h"
+#include"straight_line.h"
 #include <stdio.h>
 #include <math.h>
 
@@ -79,4 +80,5 @@ void fw_main(void)
         delay_us(20); 
     }
 }
+
 
