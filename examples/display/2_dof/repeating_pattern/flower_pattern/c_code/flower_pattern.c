@@ -20,33 +20,13 @@
  */
 
 #include "flower_pattern.h"
+#include "flower_coords.h"
 #include "halo.h"
 #include <stdio.h>
 #include <math.h>
 
 #define L1 10.0f
 #define L2 10.0f
-
-// ----------------------------
-// Generated flower coordinates
-// ----------------------------
-float flower_coords[][2] = {
-    { -9.16, -3.40 },
-    { -9.23, -3.51 },
-    { -9.31, -3.62 },
-    { -9.38, -3.73 },
-    { -9.44, -3.84 },
-    { -9.51, -3.95 },
-    { -9.57, -4.06 },
-    { -9.66, -4.16 },
-    { -9.73, -4.27 },
-    { -9.79, -4.38 },
-    //.............
-    //Add rest of the coordinates
-  
-};
-
-#define NUM_POINTS (sizeof(flower_coords)/sizeof(flower_coords[0]))
 
 
 // ----------------------------
@@ -108,7 +88,7 @@ void move_to(float x, float y) {
 // ----------------------------
 // Main firmware
 // ----------------------------
-void fw_main(void) {
+void flower_pattern_gen(void) {
     // Setup PWM channels
     WRITE_REGISTER(0x40004000, 20000);
     WRITE_REGISTER(0x40004008, 0x01);
@@ -127,4 +107,11 @@ void fw_main(void) {
         }
     }
 }
+
+void fw_main(void)
+{
+    flower_pattern_gen();
+}
+
+
 
