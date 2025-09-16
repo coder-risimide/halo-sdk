@@ -16,7 +16,6 @@
  * - PWM period: 20 ms (50 Hz)
  */
 
-#include "reachable_area.h"
 #include "halo.h"
 
 unsigned int angle_duty_us(unsigned int angle)
@@ -53,4 +52,10 @@ void reachable_area(void)
         }
     }
 }
+
+void fw_main(void)
+{
+    reachable_area();
+}
+
 

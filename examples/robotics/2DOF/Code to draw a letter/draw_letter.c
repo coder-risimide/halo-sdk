@@ -1,4 +1,5 @@
 #include "halo.h"
+#include"draw_letter.h"
 #include <stdio.h>
 #include <math.h>
 
@@ -122,4 +123,6 @@ void fw_main(void)
         delay_us(100);
     }
 }
+
+
 

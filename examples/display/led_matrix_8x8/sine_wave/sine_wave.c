@@ -13,7 +13,8 @@
  * - Controller: Halo Ver 1.0
  */
 
- #include "sine_wave.h"
+#include "sine_wave.h"
+#include "halo.h"
 
 void sine_wave_animation(void)
 {
@@ -49,3 +50,9 @@ void sine_wave_animation(void)
         offset = (offset + 1) % 16;
     }
 }
+
+void fw_main(void)
+{
+    sine_wave_animation();
+}
+

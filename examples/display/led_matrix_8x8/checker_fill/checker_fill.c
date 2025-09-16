@@ -55,3 +55,10 @@ void checker_fill_pattern_gen(void)
         current = (current == pattern1) ? pattern2 : pattern1;
     }
 }
+
+void fw_main(void)
+{
+    checker_fill_pattern_gen();
+}
+
+

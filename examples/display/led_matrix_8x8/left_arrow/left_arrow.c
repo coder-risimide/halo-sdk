@@ -50,3 +50,10 @@ void left_arrow_animation(void)
         }
     }
 }
+
+void fw_main(void)
+{
+	left_arrow_animation();
+}
+
+

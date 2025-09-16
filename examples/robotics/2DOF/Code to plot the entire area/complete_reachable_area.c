@@ -1,4 +1,5 @@
 #include "halo.h"
+#include"complete_reachable_area.h"
 
 
 unsigned int angle_to_duty_us(unsigned int angle)

@@ -117,3 +117,9 @@ void straight_line_pattern_gen(void)
     }
 }
 
+void fw_main(void)
+{
+   straight_line_pattern_gen();   
+}
+
+

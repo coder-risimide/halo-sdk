@@ -90,3 +90,10 @@ void fire_works_animation(void)
         }
     }
 }
+
+void fw_main(void)
+{
+	fire_works_animation();
+}
+
+

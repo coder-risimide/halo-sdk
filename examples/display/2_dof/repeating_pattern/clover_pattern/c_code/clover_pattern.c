@@ -20,30 +20,13 @@
  */
 
 #include "clover_pattern.h"
+#include "clover_coords.h"
 #include "halo.h"
 #include <stdio.h>
 #include <math.h>
 
 #define L1 10.0f
 #define L2 10.0f
-
-// ----------------------------
-// Generated clover coordinates
-// ----------------------------
-float clover_coords[][2] = {
-    { -7.68, -0.88 },
-    { -7.68, -1.01 },
-    { -7.68, -1.13 },
-    { -7.68, -1.26 },
-    { -7.68, -1.38 },
-    { -7.68, -1.51 },
-    { -7.68, -1.63 },
-    //.............
-    //Add rest of the coordinates
-  
-};
-
-#define NUM_POINTS (sizeof(clover_coords)/sizeof(clover_coords[0]))
 
 
 // ----------------------------
@@ -105,7 +88,7 @@ void move_to(float x, float y) {
 // ----------------------------
 // Main firmware
 // ----------------------------
-void fw_main(void) {
+void clover_pattern_gen(void) {
     // Setup PWM channels
     WRITE_REGISTER(0x40004000, 20000);
     WRITE_REGISTER(0x40004008, 0x01);
@@ -123,5 +106,10 @@ void fw_main(void) {
             delay_us(5); // adjust drawing speed (5 ms per point here)
         }
     }
+}
+
+void fw_main(void)
+{
+  clover_pattern_gen();
 }
 
