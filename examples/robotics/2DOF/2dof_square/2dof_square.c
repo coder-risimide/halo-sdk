@@ -69,10 +69,10 @@ void fw_main(void) {
 
     // Square coordinates (10x10 cm, counterclockwise)
     float square[4][2] = {
-        {5.0, 5.0},   // top-left
-        {15.0, 5.0},  // top-right
-        {15.0, -5.0}, // bottom-right
-        {5.0, -5.0}   // bottom-left
+        {0.0, 10.0},   // top-left  
+        {5.0, 10.0},  // top-right  
+        {5.0, 0.0},   // bottom-right  
+        {0.0, 0.0}     // bottom-left
     };
 
     while (1) {
@@ -87,7 +87,7 @@ void fw_main(void) {
                 float t = (float)j / segments;
                 float x = x1 + t * (x2 - x1);
                 float y = y1 + t * (y2 - y1);
-                move_to(x, y);
+                move_to(x-10, y+5);
             }
         }
     }

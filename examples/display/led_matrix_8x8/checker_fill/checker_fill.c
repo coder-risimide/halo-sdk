@@ -13,7 +13,8 @@
  * - Controller: Halo Ver 1.0
  */
 
- #include "checker_fill.h"
+#include "halo.h" 
+#include "checker_fill.h"
 
 void checker_fill_pattern_gen(void)
 {

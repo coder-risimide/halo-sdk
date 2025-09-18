@@ -13,7 +13,8 @@
  * - Controller: Halo Ver 1.0
  */
 
- #include "fire_works.h"
+#include "halo.h"
+#include "fire_works.h"
 
 void fire_works_animation(void)
 {

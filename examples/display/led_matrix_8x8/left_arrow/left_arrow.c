@@ -13,7 +13,8 @@
  * - Controller: Halo Ver 1.0
  */
 
- #include "left_arrow.h"
+#include "halo.h"
+#include "left_arrow.h"
 
 void left_arrow_animation(void)
 {
